@@ -25,14 +25,16 @@ def OverClick(clickTimes,lOrR,img):
     if location is not None:
         print('over')
         OverFlag = 1
-
-    print("未找到over图片,5秒后重试")
+    else:
+        print("未找到over图片,5秒后重试")
     time.sleep(5)
 
     location = pyautogui.locateCenterOnScreen(img, confidence=0.9)
     if location is not None:
         print('over')
         OverFlag = 1
+
+    return OverFlag
 
 #任务
 def mainWork():
